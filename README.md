@@ -1,5 +1,7 @@
 # Ev3Dualshock4
 
+This is a small package for reading events from the dualshock 4 playstation controller for an ev3. The events yielded or dispatched are only axis or button press change events.
+
 ## TODO
 - [ ] Add asyncio support
 
