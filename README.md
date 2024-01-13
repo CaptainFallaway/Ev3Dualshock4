@@ -4,6 +4,8 @@ This is a small package for reading events from the dualshock 4 playstation cont
 
 It's at the moment designed to be simple and quite barebone for easy implementation into different projects.
 
+Package is programmed in python 3.5.6 since that's the version that the ev3dev OS has installed.
+
 ## TODO
 - [ ] Add asyncio support
 
