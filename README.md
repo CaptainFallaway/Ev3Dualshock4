@@ -2,6 +2,8 @@
 
 This is a small package for reading events from the dualshock 4 playstation controller for an ev3. The events yielded or dispatched are only axis or button press change events.
 
+It's at the moment designed to be simple and quite barebone for easy implementation into different projects.
+
 ## TODO
 - [ ] Add asyncio support
 
@@ -29,10 +31,12 @@ from Dualshock import DeviceEventDispatcher, Event, constants
 
 device = DeviceEventDispatcher("/dev/input/event4")
 
+# Register a function as a decorator
 @device.register_event(constants.R2_AXIS)
 def handle_r2_axis_change(event):
     print("Value changed too: " + event.value)
     print("Value changed at controller timestamp: " + event.time)
+
 
 def handle_circle_state_change(event):
     if event.value == 1:
@@ -40,10 +44,8 @@ def handle_circle_state_change(event):
     else:
         print("Circle released!")
 
+# Register function normally
 device.register_event(constants.CIRCLE, handle_circle)
-
-print("starting to listen for events...")
-print(device.events)
 
 device.start_listening()
 ```
