@@ -37,7 +37,6 @@ def handle_r2_axis_change(event):
     print("Value changed too: " + event.value)
     print("Value changed at controller timestamp: " + event.time)
 
-
 def handle_circle_state_change(event):
     if event.value == 1:
         print("Circle pressed!")
